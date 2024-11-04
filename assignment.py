@@ -1,17 +1,34 @@
-import math
-redo = True
-while ( redo ):
-  radius = input( "What is the radius of the circle? " )
-  try:
-    radius = float(radius)
-    if ( radius >= 0 ):
-      redo = False
-    else:
-      print('The radius must be a > or = 0 ')
-  except:
-    print('The radius must be a number')
+Redo = True
+a = 0
+while (Redo):
+  x = input("Enter: Large or Extra Large:  ")
+  if x == "large" or x == "Large":
+      a = 6
+      break
+  elif x == "extra large" or x == "extra Large" or x == "Extra large" or x == "Extra Large":
+      a = 10
+      break
+  else:
+      print("Please enter valid input")
 
-area = math.pi * radius ** 2
-circumference = 2 * math.pi * radius
-print( "The area of the circle is", area )
-print( "The circumference of the circle is", circumference )
+while (Redo):
+  y = input ("Enter: Amount of Toppings:  ")
+
+  if y == "1":
+    a = a + 1
+    break
+  elif y == "2":
+    a = float(a) + 1.75
+    break
+  elif y == "3":
+    a = float(a) + 2.50
+    break
+  elif y == "4":
+    a = float(a) + 3.35
+    break
+  else:
+    print ("Please enter valid input")
+
+f = "Your Total is $"
+g = round(float(a) * 1.13, 2)
+print (f,g)
