@@ -1,9 +1,10 @@
-          <?php
+        <?php
           if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $a = 0;
             $b = 0;
 
-            $x = strtolower(trim($_POST['Size']));
+            // Corrected variable names to match the form input fields: 'size' and 'toppings'
+            $x = strtolower(trim($_POST['size']));
 
             if ($x == 'large' || $x == 'l') {
               $a = 6.00;
@@ -14,7 +15,9 @@
               exit();
             }
 
-            $t = isset($_POST['Toppings']) ? intval($_POST['Toppings']) : 0;
+            // Corrected the name of the 'toppings' field to match the form
+            $t = isset($_POST['toppings']) ? intval($_POST['toppings']) : 0;
+
             if ($t == 1) {
               $b = 1.00;
             } elseif ($t == 2) {
@@ -30,23 +33,19 @@
               exit();
             }
 
-            $v = ($a + $b) * 1.13;
+            $v = ($a + $b) * 1.13; // Add 13% tax
 
             echo "<p>Your total cost is: $" . number_format($v, 2) . "</p>";
           }
           ?>
 
-          <br /><br />
-          <a href="<?php echo $_SERVER['PHP_SELF']; ?>"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-              Do Another?
-            </button></a>
-
+        <br /><br />
+        <center>
+          <a href="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Do Another?</button>
+          </a>
         </center>
 
-      </div>
-    </main>
-  </div>
+        </body>
 
-</body>
-
-</html>
+        </html>
