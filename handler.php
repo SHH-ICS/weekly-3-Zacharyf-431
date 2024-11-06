@@ -30,19 +30,42 @@
 
         <center>
 
-          <?php
-          $x = 0;
-          if (isset($_POST['Size'])) {
-            $x = $_POST['Size'];
-          }
+        <?php
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $a = 0;
+      $b = 0;
+      }
+      if (isset($_POST['Size'])) {
+      $x = strtolower(trim($_POST['Size']));
+      }
 
-          echo "The Total is: $"
-          echo "<p>Diameter is = " . number_format((float)$diameter, 2, '.', '') . "</p>\n";
-          $radius = ($diameter / 2);
-          echo "<p>Radius is = " . number_format((float)$radius, 2, '.', '') . "</p>\n";
-          echo "<p>Area is = " . number_format((float)(pi() * ($radius ** 2)), 2, '.', '') . "</p>\n";
-          echo "<p>Circumference is = " . number_format((float)(2 * $radius * pi()), 2, '.', '') . "</p>\n";
-          ?>
+        if ($x == 'large' || $x == 'l') {
+            $a = 6.00;
+        } elseif ($s == 'extra large' || $s == 'xl') {
+            $a = 10.00;
+        } else {
+            echo "<p>Please enter a valid size (Large / Extra Large).</p>";
+            exit();
+        }
+        $t = isset($_POST['Toppings']) ? intval($_POST['Toppings']) : 0;
+        if ($t == 1) {
+          $b = 1.00;
+        } elseif ($t == 2) {
+          $b = 1.75;
+        } elseif ($t == 3) {
+          $b = 2.50;
+        } elseif ($t == 4) {
+          $b = 3.35;
+        } elseif ($t == 0) {
+          $b = 0.00;
+        }  else {
+            echo "<p>Please enter a valid number of toppings (0-4).</p>";
+            exit();
+        }
+
+        $v = ($a + $b) * 1.13;
+        echo "<p>Your total cost is: $" . number_format($v, 2) . "</p>";
+        ?>
 
           <br /><br />
           <!-- Colored raised button -->
