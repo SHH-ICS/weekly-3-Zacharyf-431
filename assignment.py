@@ -22,16 +22,16 @@ while (Redo):
     a = a + 1
     break
   elif y == "2":
-    a = float(a) + 1.75
+    a = a + 1.75
     break
   elif y == "3":
-    a = float(a) + 2.50
+    a = a + 2.50
     break
   elif y == "4":
-    a = float(a) + 3.35
+    a = a + 3.35
     break
   elif y == "0":
-    a = float(a) + 0 
+    a = a + 0 
     break
   else:
     print ("Please enter valid input")
