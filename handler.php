@@ -41,7 +41,7 @@
 
         if ($x == 'large' || $x == 'l') {
             $a = 6.00;
-        } elseif ($s == 'extra large' || $s == 'xl') {
+        } elseif ($x == 'extra large' || $x == 'xl') {
             $a = 10.00;
         } else {
             echo "<p>Please enter a valid size (Large / Extra Large).</p>";
