@@ -27,25 +27,29 @@
         <!-- Your content goes here -->
 
 
-        <center>
+   <center>
+          <form action="" method="POST">
 
-<!-- Simple Textfield -->
-<form action="#">
-  <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="sample1">
-    <label class="mdl-textfield__label" for="sample1">Type Size</label>
-  </div>
-</form>
+            <div class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="size" name="size" required>
+              <label class="mdl-textfield__label" for="size">Enter Pizza Size (Large / Extra Large):</label>
+            </div>
 
             <br />
 
-            <!-- Colored raised button -->
+            <div class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="number" id="toppings" name="toppings" min="0" max="4" required>
+              <label class="mdl-textfield__label" for="toppings">Enter Number of Toppings (0-4):</label>
+            </div>
+
+            <br />
+
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">
-              Order
+              Calculate Total
             </button>
+
           </form>
 
-        </center>
 
 
       </div>

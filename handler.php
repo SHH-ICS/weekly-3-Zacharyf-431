@@ -31,10 +31,12 @@
         <center>
 
           <?php
-          $diameter = 0;
-          if (isset($_POST['diameter'])) {
-            $diameter = $_POST['diameter'];
+          $x = 0;
+          if (isset($_POST['Size'])) {
+            $x = $_POST['Size'];
           }
+
+          echo "The Total is: $"
           echo "<p>Diameter is = " . number_format((float)$diameter, 2, '.', '') . "</p>\n";
           $radius = ($diameter / 2);
           echo "<p>Radius is = " . number_format((float)$radius, 2, '.', '') . "</p>\n";
